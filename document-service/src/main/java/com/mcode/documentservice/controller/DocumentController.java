@@ -19,6 +19,7 @@ public class DocumentController {
         log.info("Inside saveDocument of DocumentController");
         return documentService.saveDocument(document);
     }
+
     @GetMapping("/{id}")
     public ResponseTemplateVO getDocumentWithDepartment(@PathVariable("id") Long documentId) {
         log.info("Inside getDocumentWithDepartment of DocumentController");
