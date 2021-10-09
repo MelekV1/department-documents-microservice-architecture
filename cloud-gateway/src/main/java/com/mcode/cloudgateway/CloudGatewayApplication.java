@@ -1,14 +1,17 @@
-package com.mcode.departmentservice;
+package com.mcode.cloudgateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 
 @SpringBootApplication
-public class DepartmentServiceApplication {
+@EnableEurekaClient
+@EnableHystrix
+public class CloudGatewayApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DepartmentServiceApplication.class, args);
+        SpringApplication.run(CloudGatewayApplication.class, args);
     }
 
 }

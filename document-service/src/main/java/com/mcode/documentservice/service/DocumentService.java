@@ -27,7 +27,7 @@ public class DocumentService {
         ResponseTemplateVO vo = new ResponseTemplateVO();
         Document document = documentRepository.findByDocumentId(documentId);
         Department department =
-                restTemplate.getForObject("http://localhost:9001/departments/" + document.getDepartmentId(), Department.class);
+                restTemplate.getForObject("http://DEPARTMENT-SERVICE/departments/" + document.getDepartmentId(), Department.class);
         //log.info(department.getDepartmentName());
         vo.setDepartment(department);
         vo.setDocument(document);
