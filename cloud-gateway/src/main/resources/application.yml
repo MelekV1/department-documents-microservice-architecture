@@ -5,6 +5,9 @@ spring :
   application:
     name: API-GATEWAY
   cloud:
+    config:
+      enabled: true
+      uri: http://localhost:9296
     gateway:
       routes:
         - id: DOCUMENT-SERVICE
@@ -25,6 +28,7 @@ spring :
               args:
                 name: DEPARTMENT-SERVICE
                 fallbackuri: forward:/departmentServiceFallBack
+
 hystrix:
   command:
     fallbackcmd:
@@ -32,11 +36,13 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 4000
+
 management:
-  endpoint:
+  endpoints:
     web:
       exposure:
         include: hystrix.stream
+
 eureka:
   client:
     registerWithEureka: true

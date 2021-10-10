@@ -1,0 +1,5 @@
+spring:
+  cloud:
+    conig:
+      enabled: true
+      uri: http://localhost:9296
