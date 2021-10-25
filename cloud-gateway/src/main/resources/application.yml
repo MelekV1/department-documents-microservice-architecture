@@ -43,6 +43,7 @@ management:
       exposure:
         include: hystrix.stream
 
+
 eureka:
   client:
     registerWithEureka: true
